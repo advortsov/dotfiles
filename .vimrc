@@ -7,24 +7,24 @@ set expandtab
 set tabstop=2
 
 
-set path+=**
-set wildmenu
+"set path+=**
+"set wildmenu
 
 set hlsearch
 set incsearch
 
-command! MakeTags !ctags -R .
+"command! MakeTags !ctags -R .
 
 
 call plug#begin()
-
+Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'sainnhe/gruvbox-material'
 Plug 'vim-airline/vim-airline'
-"Plug 'neoclide/coc.nvim', {'branch': 'develop'}
-"Plug 'ctrlpvim/ctrlp.vim'
+Plug 'neoclide/coc.nvim'
+Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plug 'junegunn/fzf.vim'
 Plug 'tell-k/vim-autopep8'
@@ -32,7 +32,7 @@ Plug 'tell-k/vim-autopep8'
 "Plug 'tpope/vim-commentary'
 "Plug 'python-rope/ropevim'
 "Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-Plug 'python-mode/python-mode'
+"Plug 'python-mode/python-mode'
 
 
 call plug#end()
@@ -67,7 +67,7 @@ set splitright
 map <C-n> :NERDTreeToggle<CR>
 map <leader>gd <Plug>(coc-definition)
 map <leader>gr <Plug>(coc-references)
-noremap <C-p> :GFiles<CR>
+noremap <C-f> :GFiles<CR>
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 
 let g:ctrlp_map = '<C-p>'
