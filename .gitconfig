@@ -105,4 +105,4 @@
 [http]
         sslVerify = false
 [credential]
-	helper = wincred
+	helper = cache
