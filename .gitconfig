@@ -1,0 +1,108 @@
+[core]
+        warnambiguousrefs = false
+        filemode = false
+        quotepath = false
+        sparsecheckout = false
+	editor = C:/Dev/Git/usr/bin/vim
+	autocrlf = true
+[color]
+        diff = auto
+        branch = auto
+        interactive = auto
+        status = auto
+[user]
+	name = advortsov
+	email = a.dvortsov@iteco-inno.ru
+[gui]
+        encoding = UTF-8
+[alias]
+        f = fetch
+        s = status -s
+        st = status
+        ci = commit
+        co = checkout
+        br = branch
+		
+		cl = clone
+		
+		l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+        ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)[%an]%Creset' --abbrev-commit --date=relative
+	quick-stats = !  ~/Desktop/wprj/git-quick-stats/git-quick-stats
+	rw = !bash -c \"git push origin HEAD:refs/for/$1\" -
+	draft = !bash -c \"git push origin HEAD:refs/drafts/$1\" -
+	    # one-line log
+        lo = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+		
+		a = add
+		ap = add -p
+		
+		c = commit --verbose
+		ca = commit -a --verbose
+		cm = commit -m
+		cam = commit -a -m
+		m = commit --amend --verbose
+        ac = "!git add . && git commit -am"
+		
+		# Get the branch name (used in aliases): $ git current-branch-name
+		current-branch-name = "!git rev-parse --abbrev-ref HEAD"
+		
+		pc = "!git push origin $(git current-branch-name)"
+		
+		# reset all uncommited changes
+        r = reset --hard HEAD
+		# undo last commit
+		u = reset --soft HEAD~1
+		
+		d = diff
+		ds = diff --stat
+		dc = diff --cached
+
+		s = status -s
+		co = checkout
+		cob = checkout -b
+		# list branches sorted by last modified
+		b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
+		# list aliases
+		la = "!git config -l | grep alias | cut -c 7-"
+		
+		rb = "!f() { \
+            echo fetching...; \
+            git fetch; \
+            if [ $? -eq 0 ]; then \
+                last_status=$(git status --untracked-files=no --porcelain); \
+                if [ \"$last_status\" != \"\" ]; then \
+                    echo stashing local changes...; \
+                    git stash; \
+                else \
+                    echo nothing to stash...; \
+                fi;\
+                if [ $? -eq 0 ]; then \
+                    echo rebasing...;\
+                    git rebase;\
+                    if [ $? -eq 0 ]; then \
+                        if [ \"$last_status\" != \"\" ]; then\
+                            echo applying stashed changes...;\
+                            git stash pop;\
+                            if [ $? -ne 0 ]; then \
+                                echo STASH POP FAIL - you will need to resolve merge conflicts with git mergetool; \
+                            fi; \
+                        fi; \
+                    else \
+                        echo REBASE FAILED - you will need to manually run stash pop; \
+                    fi;\
+                fi;\
+            fi; \
+            if [ $? -ne 0 ]; then \
+                echo ERROR: Operation failed; \
+            fi; \
+        }; f"
+	
+[pack]
+        windowMemory = 128m
+[push]
+        default = simple
+[http]
+        sslVerify = false
+[credential]
+	helper = wincred
