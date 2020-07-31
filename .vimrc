@@ -23,7 +23,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'sainnhe/gruvbox-material'
 Plug 'vim-airline/vim-airline'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+"Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 "Plug 'junegunn/fzf.vim'
