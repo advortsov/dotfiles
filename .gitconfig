@@ -4,7 +4,6 @@
         quotepath = false
         sparsecheckout = false
 	editor = C:/Dev/Git/usr/bin/vim
-	autocrlf = true
 [color]
         diff = auto
         branch = auto

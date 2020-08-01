@@ -31,7 +31,14 @@ alias cfvim='vim ~/.vimrc'
 alias cfi3='vim ~/.config/i3/config'
 alias cfc='vim ~/.config/compton.conf'
 alias cfpb='vim ~/.config/polybar/config'
+alias cfr='vim ~/.config/ranger/rc.conf'
 alias cfx='vim ~/.xinitrc'
+
+# updates
+
+aur() {
+        git clone $1 && cd $(basename "$1" ".${1##*.}") && makepkg -sri && cd .. && rm -rf $(basename "$1" ".${1##*.}")
+}
 
 #alias slurm='ssh s003136@sbox.slurm.io'
 alias slurm='sshpass -p 97d66a74 ssh s003136@sbox.slurm.io'
@@ -56,3 +63,4 @@ done
 
 
 PS1='[\u@\h \W]\$ '
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/home/alarm/dotfiles/scripts/
