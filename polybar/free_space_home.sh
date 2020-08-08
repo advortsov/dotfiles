@@ -1,8 +1,8 @@
 #!/bin/sh
 
-#DIR=$(df -h /home | grep dev | awk -F ' ' '{ print $4 }' | sed 's/\G//')
-DIR=$(df -h /home | grep dev | awk -F ' ' '{ print $4 }')
+#FREE=$(df -h /home | grep dev | awk -F ' ' '{ print $4 }')
+FREE=$(bc -l <<< 'scale = 1; '$(df -m /home | grep dev | awk -F ' ' '{ print $4 }')/1024)
  
-if [[ "${DIR}" ]]; then
-  echo "${DIR}"
+if [[ "${FREE}" ]]; then
+  echo "${FREE}G"
 fi

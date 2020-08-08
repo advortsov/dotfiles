@@ -45,18 +45,18 @@ alias slurm='sshpass -p 97d66a74 ssh s003136@sbox.slurm.io'
 
 
 ###### git autocomplete #######
-function_exists() {
-    declare -f -F $1 > /dev/null
-    return $?
-}
-
-for al in git --list-cmds=alias; do
-    alias G$al="git $al"
-
-    complete_func=_git_$(__git_aliased_command $al)
-    function_exists $complete_func && __git_complete G$al $complete_func
-done
-
+#function_exists() {
+#    declare -f -F $1 > /dev/null
+#    return $?
+#}
+#
+#for al in git --list-cmds=alias; do
+#    alias G$al="git $al"
+#
+#    complete_func=_git_$(__git_aliased_command $al)
+#    function_exists $complete_func && __git_complete G$al $complete_func
+#done
+#
 
 #######
 
