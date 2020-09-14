@@ -33,7 +33,7 @@ alias cfc='vim ~/.config/compton.conf'
 alias cfpb='vim ~/.config/polybar/config'
 alias cfr='vim ~/.config/ranger/rc.conf'
 alias cfx='vim ~/.xinitrc'
-
+alias pcm='~/soft/pycharm-community-2020.2/bin/pycharm.sh'
 # updates
 
 aur() {

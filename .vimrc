@@ -21,8 +21,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'sainnhe/gruvbox-material'
+"Plug 'sainnhe/gruvbox-material'
 Plug 'vim-airline/vim-airline'
+Plug 'morhetz/gruvbox'
 "Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -33,6 +34,7 @@ Plug 'tell-k/vim-autopep8'
 "Plug 'python-rope/ropevim'
 "Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 "Plug 'python-mode/python-mode'
+Plug 'vim-airline/vim-airline-themes'
 
 
 call plug#end()
@@ -74,16 +76,18 @@ let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " Important!!
-if has('termguicolors')
-  set termguicolors
-endif
+"if has('termguicolors')
+"  set termguicolors
+"endif
 
 " For dark version.
 set background=dark
 "set background=light
-let g:gruvbox_material_background = 'hard'
-colorscheme gruvbox-material
+"let g:gruvbox_material_background = 'hard'
+let g:gruvbox_background = 'hard'
+"colorscheme gruvbox-material
 
 
-let g:airline_theme = 'gruvbox_material'
+"let g:airline_theme = 'gruvbox'
+"let g:airline_theme = 'gruvbox_material'
 
