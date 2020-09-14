@@ -29,15 +29,27 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+exec --no-startup-id redshift 
+exec --no-startup-id picom -b 
 
 # my exec
-exec "setxkbmap -layout us,ru"
-exec "setxkbmap -option 'grp:alt_shift_toggle'"
+exec_always setxkbmap -option grp:alt_shift_toggle "en,ru" 
+
 #walpapper
 exec --no-startup-id feh --bg-max ~/Pictures/wallpaper.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+########################################################################
+########################################################################
+####
+####                   Workplaces layout 
+####
+########################################################################
+########################################################################
 
+#exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/dm/.i3/workspace-1.json'"
+exec --no-startup-id i3-msg 'workspace 9; exec telegram-desktop'
+exec --no-startup-id i3-msg 'workspace 9; exec slack'
 
 ########################################################################
 ########################################################################
@@ -104,7 +116,7 @@ bindsym $mod+minus scratchpad show
 
 # my screenshot
 #bindsym $mod+Shift+s exec --no-startup-id ~/dotfiles/scripts/screenshot_local.sh
-bindsym --release ctrl+shift+5 exec "~/dotfiles/scripts/screenshot_local.sh"
+bindsym --release ctrl+shift+s exec "~/dotfiles/scripts/screenshot_local.sh"
 
 # change focus
 bindsym $mod+j focus left

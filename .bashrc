@@ -29,7 +29,7 @@ alias gd='cd ~/Downloads'
 alias cfb='vim ~/.bashrc'
 alias cfvim='vim ~/.vimrc'
 alias cfi3='vim ~/.config/i3/config'
-alias cfc='vim ~/.config/compton.conf'
+alias cfc='vim ~/.config/picom.conf'
 alias cfpb='vim ~/.config/polybar/config'
 alias cfr='vim ~/.config/ranger/rc.conf'
 alias cfx='vim ~/.xinitrc'
@@ -64,3 +64,8 @@ alias slurm='sshpass -p 97d66a74 ssh s003136@sbox.slurm.io'
 
 PS1='[\u@\h \W]\$ '
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/home/alarm/dotfiles/scripts/
+
+
+if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx
+fi

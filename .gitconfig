@@ -3,7 +3,7 @@
         filemode = false
         quotepath = false
         sparsecheckout = false
-	editor = C:/Dev/Git/usr/bin/vim
+	    editor = vim
 [color]
         diff = auto
         branch = auto

@@ -47,9 +47,9 @@ font-1 = Weather Icons:style=Regular:size=10;2
 font-3 = FontAwesome5Free:style=Solid:pixelsize=10;3
 font-4 = FontAwesome5Brands:style=Solid:pixelsize=10;3
 
-modules-left = i3 sp2 fs1 sp2 updates-arch-combined sp2 system-cpu-loadavg sp2 memory sp2 cpu 
-modules-center = openweathermap-fullfeatured  
-modules-right = usd sp2 temperature sp2 volume sp2 date sp2 xkeyboard sp2 powermenu 
+modules-left = i3 sp2 fs1 sp2 updates-arch-combined sp2 system-cpu-loadavg sp2 memory sp2 cpu
+modules-center = openweathermap-fullfeatured
+modules-right = usd sp2 temperature sp2 volume sp2 date sp2 xkeyboard sp2 powermenu sp2 battery0
 
 tray-position = right
 tray-padding = 0
@@ -69,6 +69,12 @@ scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/battery0]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 90
 
 [module/updates-arch-combined]
 type = custom/script
