@@ -49,9 +49,12 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/dm/.i3/workspace-1.json'"
 exec --no-startup-id i3-msg 'workspace 1; exec chromium'
+exec --no-startup-id i3-msg 'workspace 7; exec kitty -e htop'
+exec --no-startup-id i3-msg 'workspace 7; exec kitty -e rtorrent'
+exec --no-startup-id i3-msg 'workspace 8; exec kitty -e ranger'
 exec --no-startup-id i3-msg 'workspace 9; exec telegram-desktop'
 exec --no-startup-id i3-msg 'workspace 9; exec slack'
-exec --no-startup-id i3-msg 'workspace 10; exec skypeforlinux'
+exec --no-startup-id i3-msg 'workspace 9; exec skypeforlinux'
 
 ########################################################################
 ########################################################################
@@ -61,12 +64,12 @@ exec --no-startup-id i3-msg 'workspace 10; exec skypeforlinux'
 ########################################################################
 ########################################################################
 
-for_window [title="Calculator"] floating enable
-#for_window [class="^.*"] border pixel 1
+for_window [title="galculator"] floating enable
+for_window [class="^.*"] border pixel 1
 for_window [class="vlc"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="vlc"] sticky enable
-for_window [class=".*"] title_format "%title"
+#for_window [class=".*"] title_format "%title"
 
 
 
@@ -94,6 +97,9 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym XF86MonBrightnessDown exec xbacklight -dec 7  # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 7
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
