@@ -24,13 +24,15 @@ font pango:DejaVu Sans Mono 8
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+exec --no-startup-id redshift 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift
 exec --no-startup-id picom -b 
+exec --no-startup-id qbittorrent 
 
 # my exec
 exec_always setxkbmap -option grp:alt_shift_toggle "us,ru"
@@ -48,9 +50,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 ########################################################################
 
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/dm/.i3/workspace-1.json'"
-exec --no-startup-id i3-msg 'workspace 1; exec chromium'
+#exec --no-startup-id i3-msg 'workspace 1; exec chromium'
 exec --no-startup-id i3-msg 'workspace 7; exec kitty -e htop'
-exec --no-startup-id i3-msg 'workspace 7; exec kitty -e rtorrent'
+#exec --no-startup-id i3-msg 'workspace 7; exec kitty -e rtorrent'
 exec --no-startup-id i3-msg 'workspace 8; exec kitty -e ranger'
 exec --no-startup-id i3-msg 'workspace 9; exec telegram-desktop'
 exec --no-startup-id i3-msg 'workspace 9; exec slack'
@@ -66,6 +68,8 @@ exec --no-startup-id i3-msg 'workspace 9; exec skypeforlinux'
 
 for_window [title="galculator"] floating enable
 for_window [class="^.*"] border pixel 1
+#for_window [class="^.*"] border pixel 0
+
 for_window [class="vlc"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="vlc"] sticky enable

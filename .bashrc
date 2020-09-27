@@ -36,6 +36,10 @@ alias cfx='vim ~/.xinitrc'
 alias pcm='~/soft/pycharm-community-2020.2/bin/pycharm.sh'
 # updates
 
+
+th() {
+  ln -sf  ~/kitty-themes/themes/$1 ~/dotfiles/kitty/theme.conf
+}
 aur() {
         git clone $1 && cd $(basename "$1" ".${1##*.}") && makepkg -sri && cd .. && rm -rf $(basename "$1" ".${1##*.}")
 }

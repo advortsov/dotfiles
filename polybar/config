@@ -47,7 +47,7 @@ font-1 = Weather Icons:style=Regular:size=10;2
 font-3 = FontAwesome5Free:style=Solid:pixelsize=10;3
 font-4 = FontAwesome5Brands:style=Solid:pixelsize=10;3
 
-modules-left = i3 sp2 fs1 sp2 updates-arch-combined sp2 system-cpu-loadavg sp2 memory sp2 cpu sp2 mpd
+modules-left = i3 sp2 fs1 sp2 fs2 sp2 updates-arch-combined sp2 system-cpu-loadavg sp2 memory sp2 cpu sp2 mpd
 modules-center = openweathermap-fullfeatured
 modules-right = usd sp2 temperature sp2 pulseaudio sp2 date sp2 xkeyboard sp2 battery0 sp2 powermenu sp2
 
@@ -180,6 +180,12 @@ content-background = ${colors.background-alt}
 [module/fs1]
 type = custom/script
 exec = ~/dotfiles/polybar/free_space_home.sh
+interval = 600
+label = %{T4}/%{T-} %output%
+
+[module/fs2]
+type = custom/script
+exec = ~/dotfiles/polybar/free_space_mnt.sh
 interval = 600
 label = %{T4}%{T-} %output%
 
@@ -432,10 +438,10 @@ menu-0-1-exec = menu-open-2
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
+menu-1-1-exec = shutdown -r now
 
 menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
+menu-2-0-exec = shutdown -P now 
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
