@@ -130,6 +130,7 @@ bindsym $mod+minus scratchpad show
 # my screenshot
 #bindsym $mod+Shift+s exec --no-startup-id ~/dotfiles/scripts/screenshot_local.sh
 bindsym --release ctrl+shift+s exec "~/dotfiles/scripts/screenshot_local.sh"
+bindsym --release Print exec "~/dotfiles/scripts/screenshot_full.sh"
 
 # change focus
 bindsym $mod+j focus left
