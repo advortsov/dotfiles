@@ -26,13 +26,17 @@ font pango:DejaVu Sans Mono 8
 # screen before suspend. Use loginctl lock-session to lock your screen.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-exec --no-startup-id redshift 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-exec --no-startup-id redshift
 exec --no-startup-id picom -b 
 exec --no-startup-id qbittorrent 
+
+# second monitor:
+#exec --no-startup-id xrandr --output DP3 --auto --right-of eDP1 
+exec --no-startup-id xrandr --output DP3 --auto --same-as eDP1 
+bindsym $mod+p move workspace to output right
+bindsym --release $mod+ctrl+m exec "~/dotfiles/scripts/switch_to_monitor2.sh"
 
 # my exec
 exec_always setxkbmap -option grp:alt_shift_toggle "us,ru"
@@ -52,7 +56,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/dm/.i3/workspace-1.json'"
 #exec --no-startup-id i3-msg 'workspace 1; exec chromium'
 exec --no-startup-id i3-msg 'workspace 7; exec kitty -e htop'
-#exec --no-startup-id i3-msg 'workspace 7; exec kitty -e rtorrent'
 exec --no-startup-id i3-msg 'workspace 8; exec kitty -e ranger'
 exec --no-startup-id i3-msg 'workspace 9; exec telegram-desktop'
 exec --no-startup-id i3-msg 'workspace 9; exec slack'
@@ -71,28 +74,26 @@ for_window [class="^.*"] border pixel 1
 #for_window [class="^.*"] border pixel 0
 
 for_window [class="vlc"] floating enable
+for_window [class="feh"] floating enable 
+for_window [class="feh"] resize set 1020 1080
 for_window [class="mpv"] floating enable
 for_window [class="vlc"] sticky enable
 #for_window [class=".*"] title_format "%title"
 
-
+hide_edge_borders both
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-
-
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 5 px or 5 ppt
         bindsym Down resize grow height 5 px or 5 ppt
         bindsym Up resize shrink height 5 px or 5 ppt
         bindsym Right resize grow width 5 px or 5 ppt
-
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 
 
 # Use pactl to adjust volume in PulseAudio.
@@ -128,7 +129,6 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # my screenshot
-#bindsym $mod+Shift+s exec --no-startup-id ~/dotfiles/scripts/screenshot_local.sh
 bindsym --release ctrl+shift+s exec "~/dotfiles/scripts/screenshot_local.sh"
 bindsym --release Print exec "~/dotfiles/scripts/screenshot_full.sh"
 

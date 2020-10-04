@@ -43,7 +43,9 @@ th() {
 aur() {
         git clone $1 && cd $(basename "$1" ".${1##*.}") && makepkg -sri && cd .. && rm -rf $(basename "$1" ".${1##*.}")
 }
-
+remove_orphan_packages() {
+        sudo pacman -Qtdq | sudo pacman -Rns -
+}
 #alias slurm='ssh s003136@sbox.slurm.io'
 alias slurm='sshpass -p 97d66a74 ssh s003136@sbox.slurm.io'
 
@@ -106,7 +108,7 @@ fi
 
 
 PS1='[\u@\h \W]\$ '
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/home/alarm/dotfiles/scripts/
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/home/alarm/dotfiles/scripts/:/usr/lib/go/bin:/home/alx/go/bin
 
 
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then

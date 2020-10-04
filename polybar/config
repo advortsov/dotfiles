@@ -16,11 +16,9 @@ secondary = #e60053
 alert = #FF0000
 
 [bar/example]
-;monitor = ${env:MONITOR:HDMI-1}
+#monitor = ${env:MONITOR}
 width = 100%
 height = 20
-;offset-x = 1%
-;offset-y = 1%
 radius = 0.0
 fixed-center = false
 
@@ -69,6 +67,60 @@ scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[bar/monitor2]
+monitor = ${env:MONITOR:DP3}
+width = 100%
+height = 20
+radius = 0.0
+fixed-center = false
+
+foreground = ${colors.foreground-alt}
+background = ${colors.background-alt}
+
+line-size = 1 
+line-color = #dfdfdf
+
+border-top-size = 0
+border-bottom-size = 0
+border-left-size = 0
+border-right-size = 0
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = Hack:pixelsize=11;4
+font-2 = "Wuncon Siji:pixelsize=10;3"
+font-1 = Weather Icons:style=Regular:size=10;2
+font-3 = FontAwesome5Free:style=Solid:pixelsize=10;3
+font-4 = FontAwesome5Brands:style=Solid:pixelsize=10;3
+
+modules-left = i3 sp2 fs1 sp2 fs2 sp2 updates-arch-combined sp2 system-cpu-loadavg sp2 memory sp2 cpu sp2 mpd
+modules-center = openweathermap-fullfeatured
+modules-right = usd sp2 temperature sp2 pulseaudio sp2 date sp2 xkeyboard sp2 battery0 sp2 powermenu sp2
+
+tray-position = right
+tray-padding = 0
+tray-detached = false
+tray-maxsize = 14
+tray-scale = 1.0
+tray-background = ${colors.background-alt}
+tray-foreground = ${colors.foreground-alt}
+tray-offset-x = 0
+tray-offset-y = 0
+
+
+wm-restack = i3
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
 
 [module/battery0]
 type = internal/battery
