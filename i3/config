@@ -29,9 +29,9 @@ font pango:DejaVu Sans Mono 8
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-exec --no-startup-id picom -b 
 exec --no-startup-id redshift 
 exec --no-startup-id qbittorrent 
+exec --no-startup-id syncthing-gtk 
 
 # second monitor:
 #exec --no-startup-id xrandr --output DP3 --auto --right-of eDP1 
@@ -40,7 +40,8 @@ bindsym $mod+p move workspace to output right
 bindsym --release $mod+ctrl+m exec "~/dotfiles/scripts/switch_to_monitor2.sh"
 
 # my exec
-exec_always setxkbmap -option grp:alt_shift_toggle "us,ru"
+#exec_always setxkbmap -option grp:alt_shift_toggle "us,ru"
+exec_always setxkbmap -option grp:toggle "us,ru"
 
 #walpapper
 exec --no-startup-id feh --bg-max ~/Pictures/wallpaper.jpg
@@ -73,8 +74,10 @@ exec --no-startup-id i3-msg 'workspace 9; exec skypeforlinux'
 for_window [title="galculator"] floating enable
 for_window [class="^.*"] border pixel 1
 #for_window [class="^.*"] border pixel 0
+for_window [class="jetbrains-idea" title="win0"] floating enable;
 
 for_window [class="vlc"] floating enable
+for_window [class="syncthing-gtk"] floating enable
 for_window [class="feh"] floating enable 
 for_window [class="feh"] resize set 1020 1080
 for_window [class="mpv"] floating enable

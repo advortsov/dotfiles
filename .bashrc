@@ -22,7 +22,8 @@ alias mcit='mvn clean install'
 
 # go to ...
 alias gdf='cd ~/dotfiles'
-alias gp='cd ~/Prj'
+alias gp='cd ~/pet'
+alias gw='cd ~/work'
 alias gd='cd ~/Downloads'
 
 # configs
@@ -34,22 +35,15 @@ alias cfpb='vim ~/.config/polybar/config'
 alias cfr='vim ~/.config/ranger/rc.conf'
 alias cfx='vim ~/.xinitrc'
 alias pcm='~/soft/pycharm-community-2020.2/bin/pycharm.sh'
+alias oc_dev='~/soft/oc/oc login -u developer -p developer https://api.crc.testing:6443'
 # updates
-
 
 th() {
   ln -sf  ~/kitty-themes/themes/$1 ~/dotfiles/kitty/theme.conf
 }
-aur() {
-        git clone $1 && cd $(basename "$1" ".${1##*.}") && makepkg -sri && cd .. && rm -rf $(basename "$1" ".${1##*.}")
-}
 remove_orphan_packages() {
         sudo pacman -Qtdq | sudo pacman -Rns -
 }
-#alias slurm='ssh s003136@sbox.slurm.io'
-alias slurm='sshpass -p 97d66a74 ssh s003136@sbox.slurm.io'
-
-
 
 function extract () {
   if [ -f $1 ] ; then

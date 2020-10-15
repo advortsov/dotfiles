@@ -11,4 +11,5 @@ ln -sf ~/dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf &&
 ln -sf ~/dotfiles/kitty/kitty-themes/themes/Solarized_Dark_Higher_Contrast.conf ~/.config/kitty/kitty-themes/themes/Solarized_Dark_Higher_Contrast.conf &&
 ln -sf ~/dotfiles/kitty/theme.conf ~/.config/kitty/theme.conf &&
 ln -sf ~/dotfiles/rofi/config ~/.config/rofi/config
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
 
