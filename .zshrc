@@ -127,6 +127,7 @@ alias ls='ls --color=auto'
 alias ll='ls -al --color=auto'
 
 # maven
+alias mc='mvn clean'
 alias mci='mvn clean install -DskipTests=true'
 alias mcit='mvn clean install'
 
@@ -151,6 +152,8 @@ alias extract_audio_multithreading='python3 ~/dotfiles/scripts/extract_audio_mul
 alias pcm='~/soft/pycharm-community-2020.2/bin/pycharm.sh'
 alias oc_dev='~/soft/oc/oc login -u developer -p developer https://api.crc.testing:6443'
 # updates
+alias send_page_to_pb='python ~/dotfiles/scripts/send_page_to_pb.py'
+alias send_email='python ~/dotfiles/scripts/send_email.py'
 
 th() {
   ln -sf  ~/kitty-themes/themes/$1 ~/dotfiles/kitty/theme.conf
@@ -196,3 +199,11 @@ else
 echo "'$1' не является допустимым файлом"
 fi
 }
+
+sync_mp3() {
+    extract_audio $1 && mv *.mp3 ~/hdd/syncthing/Music/ && echo "Done!"
+}
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+#export PATH=/home/alx/dotfiles/scripts:$PATH
+

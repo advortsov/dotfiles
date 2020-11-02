@@ -1,0 +1,52 @@
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "tabbed",
+    "percent": 1,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1032,
+               "width": 1910,
+               "x": 0,
+               "y": 20
+            },
+            "name": "omni-access-control",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^jetbrains\\-idea\\-ce$",
+                "instance": "^jetbrains\\-idea\\-ce$",
+                "title": "^omni\\-access\\-control"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1050,
+               "width": 1910,
+               "x": 0,
+               "y": 2
+            },
+            "name": "omni-access-control-api",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^jetbrains\\-idea\\-ce$",
+                "instance": "^jetbrains\\-idea\\-ce$",
+                "title": "^omni\\-access\\-control\\-api$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

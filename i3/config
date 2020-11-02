@@ -54,15 +54,24 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 ####
 ########################################################################
 ########################################################################
-
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/dm/.i3/workspace-1.json'"
-#exec --no-startup-id i3-msg 'workspace 1; exec chromium'
-exec --no-startup-id i3-msg 'workspace 7; exec kitty -e htop'
-exec --no-startup-id i3-msg 'workspace 8; exec kitty -e ranger'
-exec --no-startup-id i3-msg 'workspace 9; exec telegram-desktop'
-exec --no-startup-id i3-msg 'workspace 9; exec slack'
-exec --no-startup-id i3-msg 'workspace 9; exec skypeforlinux'
+exec --no-startup-id i3-msg 'workspace 1; exec chromium'
 
+exec --no-startup-id i3-msg 'workspace 2; exec "idea ~/work/omni-access-control"'
+#exec --no-startup-id i3-msg 'workspace 2; exec "idea ~/work/omni-access-control-api"'
+#exec --no-startup-id i3-msg 'workspace 2; exec "idea ~/work/omni-access-control-lib-common"'
+
+exec --no-startup-id i3-msg 'workspace 9; exec kitty -e htop'
+exec --no-startup-id i3-msg 'workspace 9; exec kitty -e ranger'
+exec --no-startup-id i3-msg 'workspace 10; exec telegram-desktop'
+exec --no-startup-id i3-msg 'workspace 10; exec slack'
+exec --no-startup-id i3-msg 'workspace 10; exec skypeforlinux'
+
+exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/dotfiles/workspaces/workspace-1.json'"
+exec --no-startup-id "i3-msg 'workspace 10; append_layout ~/dotfiles/workspaces/workspace-10.json'"
+exec --no-startup-id "i3-msg 'workspace 9; append_layout ~/dotfiles/workspaces/workspace-9.json'"
+#exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/dotfiles/workspaces/workspace-2.json'"
+#i3-save-tree --workspace 8 > ~/dotfiles/workspaces/workspace-9.json
 ########################################################################
 ########################################################################
 ####
