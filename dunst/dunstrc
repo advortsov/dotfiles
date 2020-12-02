@@ -192,10 +192,9 @@
 #    summary = "*script*"
 #    script = dunst_test.sh
 
-#[ignore]
-## This notification will not be displayed
-#    summary = "foobar"
-#    format = ""
+[ignore]
+    appname = Syncthing GTK
+    format = ""
 
 [signed_on]
     appname = Pidgin

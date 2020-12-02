@@ -32,12 +32,17 @@ exec --no-startup-id nm-applet
 exec --no-startup-id redshift 
 exec --no-startup-id qbittorrent 
 exec --no-startup-id syncthing-gtk 
+exec --no-startup-id blueman-applet 
+exec --no-startup-id ~/.dropbox-dist/dropboxd
 
 # second monitor:
 #exec --no-startup-id xrandr --output DP3 --auto --right-of eDP1 
 exec --no-startup-id xrandr --output DP3 --auto --same-as eDP1 
 bindsym $mod+p move workspace to output right
 bindsym --release $mod+ctrl+m exec "~/dotfiles/scripts/switch_to_monitor2.sh"
+
+# bluetooth headphones
+bindsym --release $mod+ctrl+h exec "~/dotfiles/scripts/connect_to_haylou2.sh"
 
 # my exec
 #exec_always setxkbmap -option grp:alt_shift_toggle "us,ru"

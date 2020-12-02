@@ -105,3 +105,5 @@
         sslVerify = false
 [credential]
 	helper = cache
+[gpg]
+	program = gpg2
