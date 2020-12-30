@@ -196,6 +196,30 @@
     appname = Syncthing GTK
     format = ""
 
+[ignore_telegram]
+    appname = Telegram Desktop
+    format = ""
+
+[mention_me_slack]
+    appname = Slack
+    summary = *ворцов*
+    urgency = normal
+
+[mention_me_skype]
+    appname = Skype
+    summary = *vortsov*
+    urgency = normal
+
+[mention_all_skype]
+    appname = Skype
+    summary = *все*
+    urgency = normal
+
+[disable_channels_skype]
+    appname = Skype
+    summary = *in*
+    format = ""
+
 [signed_on]
     appname = Pidgin
     summary = "*signed on*"

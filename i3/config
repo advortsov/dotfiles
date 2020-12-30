@@ -11,6 +11,10 @@
 
 set $mod Mod4
 
+
+#popup_during_fullscreen leave_fullscreen
+
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:xos4 Terminus 8
@@ -37,9 +41,11 @@ exec --no-startup-id ~/.dropbox-dist/dropboxd
 
 # second monitor:
 #exec --no-startup-id xrandr --output DP3 --auto --right-of eDP1 
-exec --no-startup-id xrandr --output DP3 --auto --same-as eDP1 
+exec --no-startup-id xrandr --output DP3 --auto --same-as eDP1 #--rotate inverted
 bindsym $mod+p move workspace to output right
+bindsym $mod+ctrl+e exec xclip -selection clipboard -o | qrencode -o - |  feh -FZ -
 bindsym --release $mod+ctrl+m exec "~/dotfiles/scripts/switch_to_monitor2.sh"
+bindsym --release $mod+ctrl+p exec "~/dotfiles/scripts/passmenu.sh"
 
 # bluetooth headphones
 bindsym --release $mod+ctrl+h exec "~/dotfiles/scripts/connect_to_haylou2.sh"
@@ -62,9 +68,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/dm/.i3/workspace-1.json'"
 exec --no-startup-id i3-msg 'workspace 1; exec chromium'
 
-exec --no-startup-id i3-msg 'workspace 2; exec "idea ~/work/omni-access-control"'
-#exec --no-startup-id i3-msg 'workspace 2; exec "idea ~/work/omni-access-control-api"'
-#exec --no-startup-id i3-msg 'workspace 2; exec "idea ~/work/omni-access-control-lib-common"'
+#exec --no-startup-id i3-msg 'workspace 2; exec "idea-ue-eap ~/work/omni-access-control"'
+#exec --no-startup-id i3-msg 'workspace 2; exec "idea ~/work/omni-access-control"'
 
 exec --no-startup-id i3-msg 'workspace 9; exec kitty -e htop'
 exec --no-startup-id i3-msg 'workspace 9; exec kitty -e ranger'
@@ -91,11 +96,13 @@ for_window [class="^.*"] border pixel 1
 for_window [class="jetbrains-idea" title="win0"] floating enable;
 
 for_window [class="vlc"] floating enable
+for_window [class="mpv"] floating enable
 for_window [class="syncthing-gtk"] floating enable
 for_window [class="feh"] floating enable 
 for_window [class="feh"] resize set 1020 1080
-for_window [class="mpv"] floating enable
 for_window [class="vlc"] sticky enable
+for_window [class="mpv"] sticky enable
+#for_window [class="mpv"] resize set 510 540
 #for_window [class=".*"] title_format "%title"
 
 hide_edge_borders both

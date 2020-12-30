@@ -36,12 +36,27 @@ Plug 'tpope/vim-surround' " cs\"'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
-
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'morhetz/gruvbox'
+Plug 'SkyLeach/pudb.vim'
 call plug#end()
+
+""" Theme
+autocmd vimenter * ++nested colorscheme gruvbox
+"""
 
 """ NerdTree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"""
+
+""" COC
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 """
 
 let g:airline#extensions#tabline#enabled = 1

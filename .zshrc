@@ -90,6 +90,7 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -130,16 +131,21 @@ alias ll='ls -al --color=auto'
 alias mc='mvn clean'
 alias mci='mvn clean install -DskipTests=true'
 alias mcit='mvn clean install'
+alias mcitm='mvn clean install -Djps.track.ap.dependencies=false'
 
 
 # go to ...
+alias gs='cd ~/dotfiles/scripts'
 alias gdf='cd ~/dotfiles'
 alias gp='cd ~/pet'
 alias gw='cd ~/work'
 alias gd='cd ~/Downloads'
 
+# remove routes for vpn
+alias rr='sudo ip r del 192.168.10.0/25 dev tunsnx && sudo ip r del 192.168.10.128/25 dev tunsnx'
 # configs
 alias cfb='nvim ~/.bashrc'
+alias cfz='nvim ~/.zshrc'
 alias cfvim='nvim ~/.vimrc'
 alias cfi3='nvim ~/.config/i3/config'
 alias cfc='nvim ~/.config/picom.conf'
@@ -147,7 +153,10 @@ alias cfpb='nvim ~/.config/polybar/config'
 alias cfr='nvim ~/.config/ranger/rc.conf'
 alias cfx='nvim ~/.xinitrc'
 
+alias r='ranger'
+
 alias extract_audio='python3 ~/dotfiles/scripts/extract_audio.py'
+alias to_pdf='python3 ~/dotfiles/scripts/to_pdf.py'
 alias extract_audio_multithreading='python3 ~/dotfiles/scripts/extract_audio_multithreading.py'
 alias pcm='~/soft/pycharm-community-2020.2/bin/pycharm.sh'
 alias oc_dev='~/soft/oc/oc login -u developer -p developer https://api.crc.testing:6443'
@@ -205,5 +214,5 @@ sync_mp3() {
 }
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
-#export PATH=/home/alx/dotfiles/scripts:$PATH
+export PATH=/home/alx/dotfiles/scripts:/home/alx/.local/bin:$PATH
 
