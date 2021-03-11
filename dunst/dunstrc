@@ -200,6 +200,10 @@
     appname = Telegram Desktop
     format = ""
 
+[ignore_dropbox]
+    appname = Dropbox
+    format = ""
+
 [mention_me_slack]
     appname = Slack
     summary = *ворцов*

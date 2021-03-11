@@ -154,6 +154,7 @@ alias cfr='nvim ~/.config/ranger/rc.conf'
 alias cfx='nvim ~/.xinitrc'
 
 alias r='ranger'
+alias f='fselect'
 
 alias extract_audio='python3 ~/dotfiles/scripts/extract_audio.py'
 alias to_pdf='python3 ~/dotfiles/scripts/to_pdf.py'
