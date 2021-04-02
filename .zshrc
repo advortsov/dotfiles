@@ -117,8 +117,8 @@ alias df='show_which df && df -k --print-type --human-readable'
 alias du='show_which du && du -k --total --human-readable'
 
 
-alias ls='ls --color=auto'
-alias ll='ls -al --color=auto'
+alias ls='gls --color=auto'
+alias ll='gls -al --color=auto'
 
 # maven
 alias mc='mvn clean'
@@ -145,9 +145,9 @@ alias cfr='nvim ~/.config/ranger/rc.conf'
 alias r='ranger'
 alias f='fselect'
 
-alias extract_audio='python3 ~/dotfiles/scripts/extract_audio.py'
-alias to_pdf='python3 ~/dotfiles/scripts/to_pdf.py'
-alias extract_audio_multithreading='python3 ~/dotfiles/scripts/extract_audio_multithreading.py'
+alias extract_audio='python ~/dotfiles/scripts/extract_audio.py'
+alias to_pdf='python ~/dotfiles/scripts/to_pdf.py'
+alias extract_audio_multithreading='python ~/dotfiles/scripts/extract_audio_multithreading.py'
 alias oc_dev='~/soft/oc/oc login -u developer -p developer https://api.crc.testing:6443'
 
 # updates
@@ -196,7 +196,11 @@ fi
 sync_mp3() {
     extract_audio $1 && mv *.mp3 ~/hdd/syncthing/Music/ && echo "Done!"
 }
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 export PATH=/home/alx/dotfiles/scripts:/home/alx/.local/bin:$PATH
+
+alias python=/usr/local/bin/python.9
+alias pip=/usr/local/bin/pip3
+
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
