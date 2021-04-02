@@ -199,7 +199,7 @@ sync_mp3() {
 
 export PATH=/home/alx/dotfiles/scripts:/home/alx/.local/bin:$PATH
 
-alias python=/usr/local/bin/python.9
+alias python=/usr/local/bin/python3.9
 alias pip=/usr/local/bin/pip3
 
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
