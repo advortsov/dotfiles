@@ -216,4 +216,5 @@ sync_mp3() {
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 export PATH=/home/alx/dotfiles/scripts:/home/alx/.local/bin:$PATH
-
+export EDITOR='code'
+export VISUAL='code'

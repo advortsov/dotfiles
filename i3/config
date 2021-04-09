@@ -61,6 +61,8 @@ bindsym --release $mod+d exec "~/dotfiles/scripts/rofi_starter.sh"
 
 # bluetooth headphones
 bindsym --release $mod+ctrl+h exec "~/dotfiles/scripts/connect_to_haylou2.sh"
+# screen lock
+bindsym --release $mod+l exec "~/dotfiles/scripts/lock.sh"
 
 # my exec
 #exec_always setxkbmap -option grp:alt_shift_toggle "us,ru"
@@ -167,7 +169,12 @@ bindsym $mod+minus scratchpad show
 
 # my screenshot
 bindsym --release ctrl+shift+s exec "~/dotfiles/scripts/screenshot_local.sh"
-bindsym --release Print exec "~/dotfiles/scripts/screenshot_full.sh"
+bindsym --release Print exec "~/dotfiles/scripts/screenshot_full_scrot.sh"
+bindsym --release Shift+Print exec "~/dotfiles/scripts/screenshot_full.sh"
+
+
+
+bindsym --release $mod+g exec "~/dotfiles/scripts/winmenu.py"
 
 # change focus
 bindsym $mod+j focus left
