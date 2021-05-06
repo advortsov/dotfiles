@@ -124,8 +124,11 @@ alias ll='gls -al --color=auto'
 alias mc='mvn clean'
 alias mci='mvn clean install -DskipTests=true'
 alias mcit='mvn clean install'
+alias mff='mvn clean install -DskipTests=true && mvn test'
 alias mcitm='mvn clean install -Djps.track.ap.dependencies=false'
 
+# spring
+alias sbr=" mvn spring-boot:run -Dspring-boot.run.profiles=local"
 
 # go to ...
 alias gs='cd ~/dotfiles/scripts'
@@ -201,6 +204,3 @@ export PATH=/home/alx/dotfiles/scripts:/home/alx/.local/bin:$PATH
 
 alias python=/usr/local/bin/python3.9
 alias pip=/usr/local/bin/pip3
-
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-
