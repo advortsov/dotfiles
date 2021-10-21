@@ -1,3 +1,5 @@
+eval "$(zoxide init zsh)"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 ZSH_DISABLE_COMPFIX="true"
@@ -117,15 +119,22 @@ alias df='show_which df && df -k --print-type --human-readable'
 alias du='show_which du && du -k --total --human-readable'
 
 
-alias ls='gls --color=auto'
-alias ll='gls -al --color=auto'
+#alias ls='gls --color=auto'
+#alias ll='gls -al --color=auto'
+alias ls='lsd'
 
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
 # maven
-alias mc='mvn clean'
-alias mci='mvn clean install -DskipTests=true'
-alias mcit='mvn clean install'
-alias mff='mvn clean install -DskipTests=true && mvn test'
-alias mcitm='mvn clean install -Djps.track.ap.dependencies=false'
+alias mc='mvn clean -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true'
+alias mci='mvn clean install -DskipTests=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true'
+alias mcit='mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true'
+alias mff='mvn clean install -DskipTests=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true && mvn test -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true'
+alias mcitm='mvn clean install -Djps.track.ap.dependencies=false -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true'
+# git
+alias gf='git fetch --all'
 
 # spring
 alias sbr=" mvn spring-boot:run -Dspring-boot.run.profiles=local"
@@ -204,3 +213,12 @@ export PATH=/home/alx/dotfiles/scripts:/home/alx/.local/bin:$PATH
 
 alias python=/usr/local/bin/python3.9
 alias pip=/usr/local/bin/pip3
+alias ide=~/dotfiles/scripts/ide.sh
+
+. /usr/local/etc/profile.d/z.sh
+
+alias emulator_start='~/Library/Android/sdk/emulator/emulator -avd Pixel_3a_API_30_x86 -netdelay none -netspeed full'
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export PATH="/usr/local/opt/maven@3.5/bin:$PATH"
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+export PATH="/usr/local/opt/maven@3.8/bin:$PATH"
