@@ -4,6 +4,7 @@
         quotepath = false
         sparsecheckout = false
 	    editor = vim
+	autocrlf = input
 [color]
         diff = auto
         branch = auto
@@ -11,7 +12,7 @@
         status = auto
 [user]
 	name = advortsov
-	email = a.dvortsov@iteco-inno.ru
+	email = aleksandr.dvortcov@convexitydmcc.com
 [gui]
         encoding = UTF-8
 [alias]
