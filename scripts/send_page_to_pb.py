@@ -19,6 +19,6 @@ def get_page_name(url):
 
 name = get_page_name(sys.argv[1])
 print(name)
-pdf = '/home/alx/' + name + '.pdf'
+pdf = '/home/advortsov/' + name + '.pdf'
 pdfkit.from_url(sys.argv[1], pdf)
 send_email(secret.pb_email, '', '', pdf)

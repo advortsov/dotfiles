@@ -19,6 +19,6 @@ def get_page_name(url):
 
 
 name = get_page_name(sys.argv[1])
-pdf = '/home/alx/pdf_web_pages/' + name + '.pdf'
+pdf = '/home/advortsov/pdf_web_pages/' + name + '.pdf'
 pdfkit.from_url(sys.argv[1], pdf)
 print(pdf)

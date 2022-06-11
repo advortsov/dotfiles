@@ -4,7 +4,7 @@ eval "$(zoxide init zsh)"
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 ZSH_DISABLE_COMPFIX="true"
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/alx/.oh-my-zsh"
+export ZSH="/Users/advortsov/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -207,5 +207,5 @@ sync_mp3() {
     extract_audio $1 && mv *.mp3 ~/hdd/syncthing/Music/ && echo "Done!"
 }
 
-export PATH=/home/alx/dotfiles/scripts:/home/alx/.local/bin:$PATH
+export PATH=/home/advortsov/dotfiles/scripts:/home/advortsov/.local/bin:$PATH
 
