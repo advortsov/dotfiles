@@ -15,7 +15,7 @@
                "x": 960,
                "y": 20
             },
-            "name": "Slack | * team | OMNI",
+            "name": "Slack",
             "percent": 0.333333333333333,
             "swallows": [
                {
@@ -24,35 +24,6 @@
                }
             ],
             "type": "con"
-        },
-        {
-            "border": "normal",
-            "floating": "auto_off",
-            "layout": "splitv",
-            "percent": 0.333333333333333,
-            "type": "con",
-            "nodes": [
-                {
-                    "border": "pixel",
-                    "current_border_width": 1,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 1060,
-                       "width": 639,
-                       "x": 1280,
-                       "y": 20
-                    },
-                    "name": "Skype",
-                    "percent": 1,
-                    "swallows": [
-                       {
-                        "class": "^Skype$",
-                        "instance": "^skype$"
-                       }
-                    ],
-                    "type": "con"
-                }
-            ]
         },
         {
             "border": "pixel",
@@ -64,7 +35,7 @@
                "x": 0,
                "y": 20
             },
-            "name": "Telegram (2406)",
+            "name": "Telegram",
             "percent": 0.333333333333333,
             "swallows": [
                {

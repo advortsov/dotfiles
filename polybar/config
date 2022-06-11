@@ -239,7 +239,8 @@ label = %{T4}/%{T-} %output%
 type = custom/script
 exec = ~/dotfiles/polybar/free_space_mnt.sh
 interval = 600
-label = %{T4}%{T-} %output%
+label = %{T4}HDD:%{T-} %output%
+;label = %{T4}%{T-} %output%
 
 [module/usd]
 type = custom/script

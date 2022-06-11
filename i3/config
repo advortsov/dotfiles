@@ -56,6 +56,7 @@ exec --no-startup-id xrandr --output eDP1 --primary --mode 1920x1080 --scale 1x1
 bindsym $mod+p move workspace to output right
 bindsym $mod+ctrl+e exec xclip -selection clipboard -o | qrencode -o - |  feh -FZ -
 bindsym --release $mod+ctrl+m exec "~/dotfiles/scripts/toggle_monitors.sh"
+bindsym --release $mod+ctrl+o exec "~/dotfiles/scripts/otp.sh"
 bindsym --release $mod+ctrl+p exec "~/dotfiles/scripts/passmenu.sh"
 bindsym --release $mod+d exec "~/dotfiles/scripts/rofi_starter.sh"
 
@@ -63,6 +64,7 @@ bindsym --release $mod+d exec "~/dotfiles/scripts/rofi_starter.sh"
 bindsym --release $mod+ctrl+h exec "~/dotfiles/scripts/connect_to_haylou2.sh"
 # screen lock
 bindsym --release $mod+l exec "~/dotfiles/scripts/lock.sh"
+bindsym --release $mod+v exec "~/dotfiles/scripts/toggle_openvpn.sh"
 
 # my exec
 #exec_always setxkbmap -option grp:alt_shift_toggle "us,ru"
@@ -91,7 +93,7 @@ exec --no-startup-id i3-msg 'workspace 10; exec telegram-desktop'
 exec --no-startup-id i3-msg 'workspace 10; exec slack'
 #exec --no-startup-id i3-msg 'workspace 10; exec skypeforlinux'
 
-exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/dotfiles/workspaces/workspace-1.json'"
+#exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/dotfiles/workspaces/workspace-1.json'"
 exec --no-startup-id "i3-msg 'workspace 10; append_layout ~/dotfiles/workspaces/workspace-10.json'"
 exec --no-startup-id "i3-msg 'workspace 9; append_layout ~/dotfiles/workspaces/workspace-9.json'"
 #exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/dotfiles/workspaces/workspace-2.json'"

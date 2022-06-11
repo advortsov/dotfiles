@@ -133,6 +133,14 @@ alias mci='mvn clean install -DskipTests=true'
 alias mcit='mvn clean install'
 alias mcitm='mvn clean install -Djps.track.ap.dependencies=false'
 
+alias mvn8='mvn -Dmaven.compiler.fork=true -Dmaven.compiler.executable=~/.jdks/corretto-1.8.0_312/bin/javac'
+alias mvn11='mvn -Dmaven.compiler.fork=true -Dmaven.compiler.executable=/usr/lib/jvm/java-11-openjdk/bin/javac'
+
+# gradle
+alias gr='gradle'
+alias grcb='gradle clean build -x test'
+alias grb='gradle build'
+alias grcbt='gradle clean build'
 
 # go to ...
 alias gs='cd ~/dotfiles/scripts'
@@ -218,3 +226,5 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 export PATH=/home/alx/dotfiles/scripts:/home/alx/.local/bin:$PATH
 export EDITOR='code'
 export VISUAL='code'
+export PATH=$PATH:$HOME/bin
+export PATH="/home/alx/.local/share/solana/install/active_release/bin:$PATH"
