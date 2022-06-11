@@ -47,6 +47,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox'
 Plug 'SkyLeach/pudb.vim'
+Plug 'rust-lang/rust.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 call plug#end()
 
 """ Theme
@@ -68,7 +71,8 @@ endif
 """
 
 let g:airline#extensions#tabline#enabled = 1
-
+syntax enable
+filetype plugin indent on
 
 " Matsuyama
 " Split window

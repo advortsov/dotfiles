@@ -4,6 +4,7 @@
         quotepath = false
         sparsecheckout = false
 	    editor = vim
+	autocrlf = input
 [color]
         diff = auto
         branch = auto
@@ -11,11 +12,11 @@
         status = auto
 [user]
 	name = advortsov
-	email = a.dvortsov@iteco-inno.ru
+	email = aleksandr.dvortcov@convexitydmcc.com
 [gui]
         encoding = UTF-8
 [alias]
-        f = fetch
+        f = fetch https
         s = status -s
         st = status
         ci = commit
@@ -45,7 +46,7 @@
 		# Get the branch name (used in aliases): $ git current-branch-name
 		current-branch-name = "!git rev-parse --abbrev-ref HEAD"
 		
-		pc = "!git push origin $(git current-branch-name)"
+		pc = "!git push https $(git current-branch-name)"
 		
 		# reset all uncommited changes
         r = reset --hard HEAD
@@ -104,6 +105,27 @@
 [http]
         sslVerify = false
 [credential]
-	helper = cache
+	helper = store
 [gpg]
-	program = gpg2
+    program = gpg2
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+
+[delta]
+    features = decorations
+
+[delta "interactive"]
+    keep-plus-minus-markers = false
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax

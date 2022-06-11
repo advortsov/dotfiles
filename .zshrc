@@ -47,8 +47,6 @@ ZSH_THEME="robbyrussell"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -85,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+#   export EDITOR='nvim'
 # else
 #   export EDITOR='mvim'
 # fi
@@ -103,11 +101,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
-export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
-
-alias java8='export JAVA_HOME=$JAVA_8_HOME'
-alias java11='export JAVA_HOME=$JAVA_11_HOME'
+# export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
+# export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+#
+# alias java8='export JAVA_HOME=$JAVA_8_HOME'
+# alias java11='export JAVA_HOME=$JAVA_11_HOME'
 
 show_which() {
   OUTPUT=$(which $1 | cut -d " " -f7-)
@@ -118,26 +116,26 @@ alias grep='grep --colour=auto'
 alias df='show_which df && df -k --print-type --human-readable'
 alias du='show_which du && du -k --total --human-readable'
 
-
-#alias ls='gls --color=auto'
-#alias ll='gls -al --color=auto'
 alias ls='lsd'
-
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+
 # maven
-alias mc='mvn clean -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true'
-alias mci='mvn clean install -DskipTests=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true'
-alias mcit='mvn clean install -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true'
-alias mff='mvn clean install -DskipTests=true -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true && mvn test -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true'
-alias mcitm='mvn clean install -Djps.track.ap.dependencies=false -Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true'
-# git
-alias gf='git fetch --all'
+alias mc='mvn clean'
+alias mci='mvn clean install -DskipTests=true'
+alias mcit='mvn clean install'
+alias mcitm='mvn clean install -Djps.track.ap.dependencies=false'
 
 # spring
 alias sbr=" mvn spring-boot:run -Dspring-boot.run.profiles=local"
+
+# gradle
+alias gr='gradle'
+alias grcb='gradle clean build -x test'
+alias grb='gradle build'
+alias grcbt='gradle clean build'
 
 # go to ...
 alias gs='cd ~/dotfiles/scripts'
@@ -211,14 +209,3 @@ sync_mp3() {
 
 export PATH=/home/alx/dotfiles/scripts:/home/alx/.local/bin:$PATH
 
-alias python=/usr/local/bin/python3.9
-alias pip=/usr/local/bin/pip3
-alias ide=~/dotfiles/scripts/ide.sh
-
-. /usr/local/etc/profile.d/z.sh
-
-alias emulator_start='~/Library/Android/sdk/emulator/emulator -avd Pixel_3a_API_30_x86 -netdelay none -netspeed full'
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-export PATH="/usr/local/opt/maven@3.5/bin:$PATH"
-export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
-export PATH="/usr/local/opt/maven@3.8/bin:$PATH"
