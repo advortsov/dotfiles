@@ -116,10 +116,9 @@ alias grep='grep --colour=auto'
 alias df='show_which df && df -k --print-type --human-readable'
 alias du='show_which du && du -k --total --human-readable'
 
-alias ls='lsd'
 alias l='ls -l'
+alias ll='ls -al'
 alias la='ls -a'
-alias lla='ls -la'
 alias lt='ls --tree'
 
 # maven

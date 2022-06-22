@@ -10,7 +10,7 @@ OTP_KEY=$(curl -s --location --request POST ''$HOST'/pub/auth/otp/generate' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "phoneNumber": "'$PHONE'"
-}' | jq .otpKey)
+}' | /opt/homebrew/bin/jq .otpKey)
 
 echo $OTP_KEY
 TOKEN=$(curl -s --location --request POST ''$HOST'/pub/auth/signin' \
@@ -20,6 +20,6 @@ TOKEN=$(curl -s --location --request POST ''$HOST'/pub/auth/signin' \
     "otp": "111111", 
     "otpKey": '$OTP_KEY' 
 }') 
-RES=$(echo $TOKEN | jq .accessToken | cut -d'"' -f 2)
+RES=$(echo $TOKEN | /opt/homebrew/bin/jq .accessToken | cut -d'"' -f 2)
 echo $RES
-echo $RES | xclip -selection c
+echo $RES | tr -d \\n | pbcopy

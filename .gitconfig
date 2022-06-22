@@ -16,7 +16,7 @@
 [gui]
         encoding = UTF-8
 [alias]
-        f = fetch https
+        f = fetch
         s = status -s
         st = status
         ci = commit
@@ -46,7 +46,7 @@
 		# Get the branch name (used in aliases): $ git current-branch-name
 		current-branch-name = "!git rev-parse --abbrev-ref HEAD"
 		
-		pc = "!git push https $(git current-branch-name)"
+		pc = "!git push origin $(git current-branch-name)"
 		
 		# reset all uncommited changes
         r = reset --hard HEAD
